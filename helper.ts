@@ -52,13 +52,14 @@ export const getNumericColumnFromTables = ($: cheerio.Root): number[] => {
     // Run through each row to find a numeric value
     rows.each((j, row) => {
       const cells = $(row).find("td");
-      const firstCellText = cells.first().text().trim();
+      const text = cells.text().trim();
 
       // Use regex to match numeric values (including decimals and commas)
-      const match = firstCellText.match(/(\d+([.,]\d+)?)/);
+      const match = text.match(/([\d,]+([.,]\d+)?)/);
 
-      if (match) {
-        const value = parseFloat(match[1].replace(",", ""));
+      if (match && match.length) {
+        // extract the numeric value
+        const value = parseFloat(match[0].replace(/,/g, ""));
         if (!isNaN(value)) {
           columnValues.push(value);
         }
