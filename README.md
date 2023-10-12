@@ -22,6 +22,12 @@ I create an API endpoint `/chart?url=xxx` to handle the `GET` request
 5. Or you can send a `GET` request to `http://localhost:8000/chart?url=xxx` _(Replace `xxx` with your URL from Wikipedia)_
 6. For testing, run `npm run test`
 
+**Demo URLs:**
+
+- https://en.wikipedia.org/wiki/Demographics_of_Australia
+- https://en.wikipedia.org/wiki/Demographics_of_China
+- https://en.wikipedia.org/wiki/Women%27s_high_jump_world_record_progression
+
 **Issue you might get:**
 
 In case, you get errors in the installation process, it's because you don't have a supported OS or processor architecture, the module will be compiled on your system. This requires several dependencies, including `Cairo` and `Pango`.
